@@ -27,15 +27,18 @@ mongoose.connection.on('connected', () => {
 })
 
 // middlewares
+app.use(express.json())
 app.use('/api/auth', authRoute)
 app.use('/api/users', usersRoute)
 app.use('/api/hotels', hotelsRoute)
 app.use('/api/rooms', roomsRoute)
-// app.get('/', (res, req) => {
-// console.log('send...')
-// })
+
+app.get((err, req, res, next) => {
+  console.log('i am middleware error...')
+  // next()
+})
 
 app.listen(5000, () => {
-  // connect()
+  connect()
   console.log('Connected...')
 })

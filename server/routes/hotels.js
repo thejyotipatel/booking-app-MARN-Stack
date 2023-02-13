@@ -1,8 +1,22 @@
 import express from 'express'
+import {
+  createHotel,
+  deleteHotel,
+  getAllHotels,
+  getHotel,
+  updateHotel,
+} from '../controllers/hotels.js'
 const router = express.Router()
 
-router.post('/', (req, res) => {
-  res.send('hello auth')
-})
+// CREATE
+router.post('/', createHotel)
+// UPDATE
+router.put('/:id', updateHotel)
+// DELETE
+router.delete('/:id', deleteHotel)
+// GET
+router.get('/:id', getHotel)
+// GET ALL
+router.get('/', getAllHotels)
 
 export default router
