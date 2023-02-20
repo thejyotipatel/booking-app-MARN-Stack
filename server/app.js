@@ -34,8 +34,16 @@ app.use('/api/hotels', hotelsRoute)
 app.use('/api/rooms', roomsRoute)
 
 app.get((err, req, res, next) => {
-  console.log('i am middleware error...')
-  // next()
+  // const errorStatus = err.status || 500
+  // const errorMessage = err.message || 'Somrthing went wrong!'
+  // return res.status(errorStatus).json({
+  //   success: false,
+  //   status: errorStatus,
+  //   message: errorMessage,
+  //   stack: err.stack,
+  // })
+  console.log('middle error')
+  next()
 })
 
 app.listen(5000, () => {
