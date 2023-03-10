@@ -1,0 +1,72 @@
+.faq {
+  background-color: $clr-neutral-100;
+  border: $d-border;
+  padding-top: $size-900;
+  h1 {
+    text-transform: uppercase;
+    word-spacing: $size-100;
+    font-size: $fs-500;
+  }
+  &-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: $size-200;
+    padding: $size-600 0;
+    padding-bottom: $size-900;
+
+    &-card {
+      color: $clr-neutral-500;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+      padding: $size-100;
+      img {
+        border-radius: 100%;
+        width: $size-900;
+      }
+      p {
+        font-size: $fs-300;
+        margin: $size-400 0;
+        word-wrap: break-word;
+      }
+      h3 {
+        @include flex-jSpace_between-aCenter;
+        font-size: $fs-400;
+        flex-direction: column;
+        font-weight: $fw-700;
+        span {
+          font-size: $fs-200;
+          font-weight: $fw-400;
+          color: $clr-neutral-200;
+        }
+      }
+    }
+  }
+
+  .foods-images-desktop,
+  .foods-images-mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 30em) {
+  .faq {
+    h1 {
+      font-size: $fs-600;
+    }
+
+    .foods-images-desktop,
+    .foods-images-mobile {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@media (min-width: 45em) {
+  .faq {
+    &-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

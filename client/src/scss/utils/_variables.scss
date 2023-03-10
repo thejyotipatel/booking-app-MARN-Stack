@@ -1,0 +1,64 @@
+$clr-primary-100: #a29dff;
+$clr-primary-200: #645cff;
+$clr-primary-300: #282566;
+
+$clr-red-dark: hsl(360, 67%, 44%);
+$clr-red-light: hsl(360, 71%, 66%);
+
+$clr-accent-100: #fff;
+$clr-accent-200: #f1f5f8;
+$clr-accent-300: #617d98;
+$clr-accent-400: #102a42;
+
+$clr-neutral-100: #000000;
+$clr-neutral-200: #555454;
+$clr-neutral-300: #c5c5c5;
+
+$ff-primery: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$ff-body: $ff-primery;
+$fs-body: calc(10px + 2vmin);
+
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+$fw-800: 800;
+$fw-900: 900;
+
+$fs-100: 12px;
+$fs-200: 16px;
+$fs-300: 18px;
+$fs-400: 0.875em;
+$fs-500: 1.5em;
+$fs-600: 2em;
+$fs-700: 2.5em;
+$fs-800: 3em;
+$fs-900: 3.5em;
+
+$ts-400: all 0.3s linear;
+
+$size-100: 0.5em;
+$size-200: 1em;
+$size-300: 1.5em;
+$size-400: 2em;
+$size-500: 2.5em;
+$size-600: 3em;
+$size-700: 3.5em;
+$size-800: 4em;
+$size-900: 5em;
+
+$bxs-100: 0 8px 16px #00000029;
+$bxs-200: 0 4px 12px #00000014, 0 0 1px #0100001a;
+$bxs-300: 0 1px 1px #0000000a;
+$bxs-400: 0 2px 1px #0000000a;
+
+$spacing: 0.25rem;
+$radius: 0.25rem;
+$large-screen-width: 1170px;
+$small-screen-width: 90vw;
+$fixed-width: 50rem;
+
+$w-container: calc(min(90%, 1440px));
+$w-header: 50px;
+$d-border: 2px solid hotpink;

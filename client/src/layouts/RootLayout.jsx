@@ -1,18 +1,25 @@
-import { Outlet, NavLink } from "react-router-dom"
+import { Outlet, NavLink } from 'react-router-dom'
+import Header from '../components/Header'
 
 export default function RootLayout() {
   return (
-    <div className="root-layout container">
-      <header>
-        <nav>
-          <h1>Booking.red</h1>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="about">About</NavLink>
-          <NavLink to="help">Help</NavLink>
-          <NavLink to="careers">Careers</NavLink>
-        </nav>
-        {/* <Breadcrumbs /> */}
-      </header>
+    <div className='root-layout  '>
+      <div className='main-header'>
+        <div className='navbar container'>
+          <NavLink className='logo' to='/'>
+            Booking.red
+          </NavLink>
+          <nav>
+            <NavLink to='register' className=''>
+              Register
+            </NavLink>
+            <NavLink to='signin' className=''>
+              Sign In
+            </NavLink>
+          </nav>
+        </div>
+        <Header />
+      </div>
       <main>
         <Outlet />
       </main>

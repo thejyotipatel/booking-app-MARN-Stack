@@ -1,0 +1,39 @@
+footer {
+  padding: $size-400 0;
+  @include flex-jSpace_between-aCenter;
+  flex-direction: column;
+  background-color: $clr-primary-500;
+  .logo h1 {
+    color: $clr-primary-300;
+    font-weight: $fw-700;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    ul {
+      @include flex-jSpace_between-aCenter($j: center);
+      margin: $size-100 0;
+
+      li {
+        margin: $size-100;
+        a {
+          font-size: $fs-400;
+          font-weight: $fw-500;
+          color: $clr-primary-300;
+          text-transform: capitalize;
+          .icon {
+            color: $clr-primary-300;
+          }
+        }
+      }
+    }
+  }
+  .attribution {
+    color: $clr-primary-100;
+
+    p a {
+      color: $clr-primary-300;
+      text-decoration: underline;
+    }
+  }
+}

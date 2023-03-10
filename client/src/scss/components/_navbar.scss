@@ -1,0 +1,181 @@
+.main-header {
+  background-color: $clr-primary-300;
+  padding-top: 1em;
+  height: 300px;
+  & .navbar {
+    // border: $d-border;
+    // height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .logo {
+      color: $clr-accent-100;
+      text-transform: none;
+      font-size: $fs-600;
+      font-weight: $fw-600;
+    }
+    & nav {
+      gap: 1em;
+      display: flex;
+      a {
+        background-color: $clr-accent-100;
+        color: $clr-accent-400;
+        border: 2px solid $clr-accent-100;
+        padding: 0.3rem 0.7rem;
+        letter-spacing: var($spacing);
+        display: inline-block;
+        font-weight: 700;
+        transition: $ts-400;
+        font-size: $fs-200;
+        cursor: pointer;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          color: $clr-accent-100;
+          background-color: transparent;
+          border-color: $clr-accent-100;
+        }
+      }
+    }
+  }
+  & header {
+    // border: $d-border;
+
+    & .header-contant {
+      color: $clr-accent-100;
+
+      & .header-list {
+        margin: $size-100 0;
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+        gap: 1em;
+        &-item {
+          display: flex;
+          gap: 0.5em;
+          font-size: $fs-400;
+          font-weight: $fw-500;
+          text-transform: capitalize;
+          color: inherit;
+          align-items: center;
+          cursor: pointer;
+          border: 2px solid transparent;
+          border-radius: 2em;
+          padding: 0.3em 0.5em;
+          transition: $ts-400;
+          &:hover {
+            border-color: $clr-accent-100;
+          }
+        }
+        & .active {
+          border-color: $clr-accent-100;
+        }
+      }
+      & .header-desc {
+        font-size: $fs-400;
+        font-weight: $fw-400;
+      }
+      & .header-btn {
+        & button {
+          background-color: $clr-primary-200;
+          color: $clr-accent-100;
+          text-transform: capitalize;
+        }
+      }
+      & .header-search-contant {
+        box-shadow: $bxs-400;
+
+        display: flex;
+        gap: 0.5em;
+        color: $clr-accent-300;
+        align-items: center;
+        justify-content: space-around;
+        border: 2px solid rgba(255, 255, 0, 0.925);
+        border-radius: $radius;
+        background-color: $clr-accent-100;
+        padding: 0.37em 0.5em;
+        margin: $size-400 0 0 0;
+        &-item {
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+          font-size: $fs-400;
+
+          & input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: $clr-accent-400;
+          }
+          & button {
+            background-color: $clr-primary-200;
+            text-transform: capitalize;
+            font-weight: $fw-500;
+            font-size: $fs-400;
+            box-shadow: $bxs-400;
+          }
+
+          // room options
+          position: relative;
+          & .room-options {
+            z-index: 2;
+            // border: 2px solid yellowgreen;
+            position: absolute;
+            top: 2.5em;
+            background-color: $clr-accent-100;
+            width: 200px;
+            padding: 0.5em;
+            box-shadow: $bxs-100;
+            &-item {
+              display: flex;
+              justify-content: space-between;
+              // gap: 0.5em;
+              margin: 0.5em;
+            }
+            & .option-btn {
+              display: flex;
+              gap: 0.5em;
+              align-items: center;
+              & button {
+                font-weight: $fw-800;
+                font-size: $fs-300;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 49em) {
+  .main-header {
+    height: 100%;
+    & .navbar {
+      & .logo {
+        font-size: $fs-500;
+      }
+    }
+    padding-bottom: 1.5em;
+    & header {
+      & .header-contant {
+        & .header-desc {
+          font-size: $fs-400;
+        }
+        & .header-search-contant {
+          flex-direction: column;
+          gap: 0.5em;
+          &-item {
+            font-size: $fs-300;
+            width: 100%;
+            & input,
+            button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
