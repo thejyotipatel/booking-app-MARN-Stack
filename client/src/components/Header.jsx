@@ -93,8 +93,9 @@ export default function Header() {
                         >
                           +
                         </button>
-                        <span>1</span>
+                        <span>{adult}</span>
                         <button
+                          disabled={adult <= 1}
                           className='btn'
                           onClick={() =>
                             dispatch(
@@ -109,17 +110,55 @@ export default function Header() {
                     <div className='room-options-item'>
                       <span>children</span>
                       <div className='option-btn'>
-                        <button className='btn'>+</button>
-                        <span>0</span>
-                        <button className='btn'>-</button>
+                        <button
+                          className='btn'
+                          onClick={() =>
+                            dispatch(
+                              optionHandler({ option: 'children', type: 'inc' })
+                            )
+                          }
+                        >
+                          +
+                        </button>
+                        <span>{children}</span>
+                        <button
+                          disabled={children <= 0}
+                          className='btn'
+                          onClick={() =>
+                            dispatch(
+                              optionHandler({ option: 'children', type: 'dec' })
+                            )
+                          }
+                        >
+                          -
+                        </button>
                       </div>
                     </div>
                     <div className='room-options-item'>
                       <span>room</span>
                       <div className='option-btn'>
-                        <button className='btn'>+</button>
-                        <span>1</span>
-                        <button className='btn'>-</button>
+                        <button
+                          className='btn'
+                          onClick={() =>
+                            dispatch(
+                              optionHandler({ option: 'room', type: 'inc' })
+                            )
+                          }
+                        >
+                          +
+                        </button>
+                        <span>{room}</span>
+                        <button
+                          className='btn'
+                          disabled={room <= 1}
+                          onClick={() =>
+                            dispatch(
+                              optionHandler({ option: 'room', type: 'dec' })
+                            )
+                          }
+                        >
+                          -
+                        </button>
                       </div>
                     </div>
                   </div>

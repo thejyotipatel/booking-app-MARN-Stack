@@ -18,7 +18,7 @@ const headerSlice = createSlice({
     },
     optionHandler: (state, { payload }) => {
       const { option, type } = payload
-      option === 'adult' : state.adult = ty
+      state[option] += type === 'inc' ? 1 : -1
     },
   },
 })
