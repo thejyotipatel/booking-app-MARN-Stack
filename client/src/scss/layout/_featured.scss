@@ -1,0 +1,30 @@
+.featured {
+  margin: 3em 0 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  & .featured-item {
+    position: relative;
+    border-radius: $radius;
+    overflow: hidden;
+    & img {
+      object-fit: cover;
+    }
+    &-titles {
+      position: absolute;
+      bottom: 1em;
+      left: 1em;
+      color: $clr-accent-100;
+      line-height: normal;
+      & h3 {
+        font-weight: 600;
+        font-size: $fs-500;
+      }
+      & h6 {
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+  }
+}

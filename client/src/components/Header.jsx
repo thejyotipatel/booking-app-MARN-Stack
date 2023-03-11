@@ -10,7 +10,15 @@ import {
   FaTaxi,
 } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
-import { openOptions, optionHandler } from '../feature/headerSlice'
+import {
+  openOptions,
+  openDateOption,
+  optionHandler,
+} from '../feature/headerSlice'
+import { DateRange } from 'react-date-range'
+import { useState } from 'react'
+import 'react-date-range/dist/styles.css'
+import 'react-date-range/dist/theme/default.css'
 
 export default function Header() {
   const dispatch = useDispatch()
@@ -22,8 +30,15 @@ export default function Header() {
     room,
     openRoomOptions,
     showSearchContant,
+    openDateOptions,
   } = useSelector((state) => state.header)
-
+  const [dates, setDates] = useState([
+    {
+      startDate: new Date(),
+      endDate: null,
+      key: 'selection',
+    },
+  ])
   return (
     <header className='header container'>
       <div className='header-contant'>
@@ -67,11 +82,28 @@ export default function Header() {
                 <input type='text' placeholder='where are you going?' />
               </div>
               <div className='header-search-contant-item'>
-                <FaCalendarDay />
-                <span>date to date</span>
+                <button
+                  className='option-btn'
+                  onClick={() => dispatch(openDateOption())}
+                >
+                  <FaCalendarDay />
+                  <span>date to date</span>
+                </button>
+                {openDateOptions && (
+                  <DateRange
+                    className='date-selection'
+                    editableDateInputs={true}
+                    onChange={(item) => setDates([item.selection])}
+                    moveRangeOnFirstSelection={false}
+                    ranges={dates}
+                  />
+                )}
               </div>
               <div className='header-search-contant-item'>
-                <button className='btn' onClick={() => dispatch(openOptions())}>
+                <button
+                  className='option-btn'
+                  onClick={() => dispatch(openOptions())}
+                >
                   <FaPeopleArrows />
                   <span>
                     {adult} adults {children} children {room} room

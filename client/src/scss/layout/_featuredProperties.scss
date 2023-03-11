@@ -1,0 +1,39 @@
+.featured-properties {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  & .featured-properties-item {
+    border-radius: $radius;
+    overflow: hidden;
+    gap: 0.2em;
+    display: flex;
+    flex-direction: column;
+    & img {
+      object-fit: cover;
+    }
+
+    & span {
+      font-weight: 600;
+      font-size: $fs-300;
+      margin: 0;
+    }
+    & .item-desc {
+      font-size: $fs-200;
+      color: $clr-accent-300;
+    }
+    & .item-price {
+      font-size: $fs-200;
+      font-weight: $fw-500;
+    }
+    &-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      & span {
+        font-size: $fs-200;
+      }
+    }
+  }
+}

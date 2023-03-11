@@ -1,0 +1,28 @@
+.properties {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  & .properties-item {
+    cursor: pointer;
+    border-radius: $radius;
+    overflow: hidden;
+    & img {
+      object-fit: cover;
+    }
+    &-titles {
+      // color: $clr-accent-100;
+      line-height: normal;
+      & h3 {
+        font-weight: 600;
+        font-size: 18px;
+      }
+      & h6 {
+        font-weight: 400;
+        font-size: 14px;
+        color: $clr-accent-300;
+      }
+    }
+  }
+}

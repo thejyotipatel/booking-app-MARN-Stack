@@ -1,5 +1,7 @@
 import { Outlet, NavLink } from 'react-router-dom'
 import Header from '../components/Header'
+import Mail from './Mail'
+import Footer from './Footer'
 
 export default function RootLayout() {
   return (
@@ -20,9 +22,11 @@ export default function RootLayout() {
         </div>
         <Header />
       </div>
-      <main>
+      <main className='container'>
         <Outlet />
       </main>
+      <Mail />
+      <Footer />
     </div>
   )
 }

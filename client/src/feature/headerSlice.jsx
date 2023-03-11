@@ -7,6 +7,7 @@ const initialState = {
   children: 0,
   room: 1,
   openRoomOptions: false,
+  openDateOptions: false,
   showSearchContant: true,
 }
 const headerSlice = createSlice({
@@ -16,6 +17,9 @@ const headerSlice = createSlice({
     openOptions: (state, action) => {
       state.openRoomOptions = !state.openRoomOptions
     },
+    openDateOption: (state, action) => {
+      state.openDateOptions = !state.openDateOptions
+    },
     optionHandler: (state, { payload }) => {
       const { option, type } = payload
       state[option] += type === 'inc' ? 1 : -1
@@ -23,5 +27,6 @@ const headerSlice = createSlice({
   },
 })
 
-export const { openOptions, optionHandler } = headerSlice.actions
+export const { openOptions, openDateOption, optionHandler } =
+  headerSlice.actions
 export default headerSlice.reducer
