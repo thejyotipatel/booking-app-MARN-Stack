@@ -6,12 +6,15 @@
 @import './utils/utilityClasses';
 
 // pages
+@import './pages/home';
+
+// components
 @import './components/navbar';
+@import './components/header';
+@import './components/footer';
+
+// layout
 @import './layout/featured';
 @import './layout/properties';
 @import './layout/featuredProperties';
 @import './layout/mail';
-@import './pages/home';
-// @import './pages/about';
-// @import './pages/faq';
-// @import './pages/footer';

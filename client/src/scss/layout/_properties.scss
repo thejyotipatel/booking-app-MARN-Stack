@@ -26,3 +26,13 @@
     }
   }
 }
+
+@media (max-width: 40em) {
+  .properties {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    & .properties-item {
+      width: calc(min(100%, 180px));
+    }
+  }
+}

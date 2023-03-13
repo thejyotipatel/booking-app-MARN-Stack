@@ -1,0 +1,154 @@
+header {
+  height: 243px;
+
+  & .header-contant {
+    color: $clr-accent-100;
+
+    & .header-list {
+      display: flex;
+      justify-content: start;
+      flex-wrap: wrap;
+      gap: 1em;
+      &-item {
+        display: flex;
+        gap: 0.5em;
+        font-size: $fs-200;
+        font-weight: $fw-500;
+        text-transform: capitalize;
+        color: inherit;
+        align-items: center;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 2em;
+        padding: 0.3em 0.5em;
+        transition: $ts-400;
+        &:hover {
+          border-color: $clr-accent-100;
+        }
+      }
+      & .active {
+        border-color: $clr-accent-100;
+      }
+    }
+    & .header-desc {
+      font-size: $fs-200;
+      font-weight: $fw-400;
+    }
+    & .header-btn {
+      margin: 0.5em 0 0.2em 0;
+      & button {
+        background-color: $clr-primary-200;
+        color: $clr-accent-100;
+        text-transform: capitalize;
+      }
+    }
+    & .header-search-contant {
+      box-shadow: $bxs-400;
+
+      display: flex;
+      gap: 0.5em;
+      color: $clr-accent-300;
+      align-items: center;
+      justify-content: space-around;
+      border: 2px solid rgba(255, 255, 0, 0.925);
+      border-radius: $radius;
+      background-color: $clr-accent-100;
+      padding: 0.37em 0.5em;
+      margin: $size-400 0 0 0;
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        font-size: $fs-400;
+        font-size: $fs-400;
+        position: relative;
+
+        & input {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          color: $clr-accent-400;
+          font-weight: $fw-400;
+          font-size: $fs-400;
+        }
+        & .date-selection {
+          position: absolute;
+          top: 3em;
+          z-index: 2;
+          display: flex;
+        }
+        & button {
+          background-color: $clr-primary-200;
+          text-transform: capitalize;
+          font-weight: $fw-500;
+          font-size: $fs-400;
+          border: none;
+          outline: none;
+        }
+        & .option-btn {
+          background-color: transparent;
+          color: $clr-primary-100;
+          font-weight: $fw-400;
+          font-size: $fs-400;
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+        }
+        // room options
+        position: relative;
+        & .room-options {
+          z-index: 2;
+          position: absolute;
+          top: 3em;
+          background-color: $clr-accent-100;
+          width: 200px;
+          padding: 0.5em;
+          box-shadow: $bxs-100;
+          &-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5em;
+          }
+          & .option-btn {
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
+            & button {
+              font-weight: $fw-800;
+              font-size: $fs-300;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 49em) {
+  header {
+    height: fit-content;
+    padding-bottom: 1em;
+
+    & .header-contant {
+      & .header-list {
+        gap: 0.2em;
+        &-item {
+          font-size: $fs-100;
+        }
+      }
+      & .header-search-contant {
+        flex-direction: column;
+        gap: 0.5em;
+        &-item {
+          font-size: $fs-300;
+          width: 100%;
+          text-transform: capitalize;
+          & input,
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

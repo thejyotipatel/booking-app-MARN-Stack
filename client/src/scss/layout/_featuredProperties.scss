@@ -1,10 +1,11 @@
 .featured-properties {
-  margin-top: 1em;
+  margin: 1em 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1em;
-  & .featured-properties-item {
+
+  &-item {
     border-radius: $radius;
     overflow: hidden;
     gap: 0.2em;
@@ -31,9 +32,23 @@
       display: flex;
       align-items: center;
       gap: 0.3em;
+      & button {
+        padding: 0.2em 0.5em;
+        border-radius: $radius;
+      }
       & span {
         font-size: $fs-200;
       }
+    }
+  }
+}
+
+@media (max-width: 50em) {
+  .featured-properties {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    &-item {
+      width: calc(min(100%, 200px));
     }
   }
 }

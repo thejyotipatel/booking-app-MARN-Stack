@@ -14,10 +14,10 @@ const headerSlice = createSlice({
   name: 'header',
   initialState,
   reducers: {
-    openOptions: (state, action) => {
+    openOptions: (state) => {
       state.openRoomOptions = !state.openRoomOptions
     },
-    openDateOption: (state, action) => {
+    openDateOption: (state) => {
       state.openDateOptions = !state.openDateOptions
     },
     optionHandler: (state, { payload }) => {

@@ -2,9 +2,9 @@
   margin: 3em 0 1em 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1em;
-  & .featured-item {
+  &-item {
     position: relative;
     border-radius: $radius;
     overflow: hidden;
@@ -25,6 +25,15 @@
         font-weight: 400;
         font-size: 14px;
       }
+    }
+  }
+}
+
+@media (max-width: 40em) {
+  .featured {
+    flex-wrap: wrap;
+    &-item {
+      width: calc(min(100%, 380px));
     }
   }
 }

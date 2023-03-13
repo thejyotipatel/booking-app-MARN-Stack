@@ -1,0 +1,53 @@
+.mail {
+  color: $clr-accent-100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.8em 0 1.8em 0;
+  &-title {
+    font-size: $fs-500;
+  }
+  &-desc {
+    font-size: $fs-200;
+    margin: 0.5em 0;
+    text-align: center;
+  }
+
+  &-input {
+    @include flex-jSpace_between-aCenter($j: center);
+    gap: 0.5em;
+    width: 100%;
+    & input {
+      background-color: $clr-accent-100;
+      color: $clr-accent-400;
+      outline: none;
+      border: 2px solid $clr-accent-200;
+      border-radius: $radius;
+      padding: 0.2em 0.8em;
+      font-size: $fs-400;
+      width: calc(min(100%, 500px));
+    }
+    & button {
+      padding: 0.4em 0.8em;
+      font-size: $fs-300;
+      background-color: $clr-primary-200;
+      color: $clr-accent-100;
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 40em) {
+  .mail {
+    &-input {
+      & button {
+        padding: 0.2em;
+        font-size: $fs-200;
+
+        font-weight: 400;
+      }
+    }
+  }
+}
