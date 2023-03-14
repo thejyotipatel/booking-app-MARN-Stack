@@ -1,5 +1,6 @@
 import { Outlet, NavLink } from 'react-router-dom'
 import Footer from './Footer'
+import Mail from './Mail'
 
 export default function RootLayout() {
   return (
@@ -10,16 +11,15 @@ export default function RootLayout() {
             Booking.red
           </NavLink>
           <nav>
-            <NavLink to='register' className=''>
-              Register
-            </NavLink>
-            <NavLink to='signin' className=''>
-              Sign In
-            </NavLink>
+            <a to='/'>Register</a>
+            <a to='/'>Sign In</a>
           </nav>
         </div>
       </div>
       <Outlet />
+      <div className='main-header'>
+        <Mail />
+      </div>
       <Footer />
     </>
   )

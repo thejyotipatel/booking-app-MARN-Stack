@@ -1,5 +1,4 @@
 import orange from '../assets/orange.jpg'
-import React from 'react'
 
 const Featured = () => {
   return (

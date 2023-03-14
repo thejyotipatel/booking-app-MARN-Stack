@@ -1,0 +1,207 @@
+.search-hotels {
+  display: flex;
+  position: relative;
+  gap: 1em;
+
+  // sidebar
+  .search-sidebar {
+    flex: 1;
+    background-color: $clr-primary-400;
+    margin-top: 0.5em;
+    border-radius: $radius;
+    position: sticky;
+    top: 1em;
+    height: min-content;
+    &-wrapper {
+      color: $clr-neutral-100;
+      margin: 0.5em;
+      font-weight: 500;
+      h2 {
+        font-weight: 500;
+        font-size: $fs-600;
+      }
+      p {
+        font-size: $fs-300;
+      }
+      input {
+        background-color: $clr-accent-100;
+        outline: none;
+        border: none;
+        width: 100%;
+      }
+      .date-btn {
+        background-color: $clr-accent-100;
+        color: $clr-neutral-100;
+        width: 100%;
+        margin: 0 0 0.5em 0;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          span {
+            font-size: $fs-200;
+          }
+          input {
+            width: calc(min(100%, 60px));
+          }
+        }
+      }
+      button {
+        text-transform: capitalize;
+        background-color: $clr-primary-200;
+        color: $clr-accent-100;
+        font-size: $fs-200;
+        width: 100%;
+        margin-top: 1em;
+      }
+    }
+  }
+
+  // result
+  .search-result {
+    flex: 3;
+
+    .search-contant {
+      .search-result-wrapper {
+        padding: 0.5em;
+        margin: 0.5em 0 0.5em 0;
+        border: 2px solid rgba(221, 221, 221, 0.815);
+        display: grid;
+        border-radius: $radius;
+        gap: 0.5em;
+        grid-template-columns: 35% auto;
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+
+        .desc {
+          display: flex;
+          gap: 0.3em;
+          display: flex;
+          align-items: stretch;
+          justify-content: space-between;
+          .titles {
+            display: flex;
+            gap: 0.3em;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-between;
+            h2 {
+              font-size: $fs-500;
+              color: $clr-primary-200;
+            }
+            span,
+            p {
+              font-size: $fs-200;
+            }
+            h4 {
+              font-size: $fs-200;
+              background-color: green;
+              color: $clr-accent-100;
+              width: fit-content;
+              padding: 0 0.2em;
+              border-radius: $radius;
+            }
+            p {
+              font-weight: $fw-600;
+            }
+            .green {
+              color: green;
+              font-weight: $fw-600;
+            }
+            .green-2 {
+              font-weight: $fw-400;
+            }
+          }
+
+          .price-desc {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-between;
+
+            .rating {
+              display: flex;
+              justify-content: space-between;
+              font-size: $fs-300;
+              font-weight: $fw-600;
+              .btn {
+                background-color: $clr-primary-300;
+              }
+            }
+
+            .price {
+              text-align: end;
+              h2 {
+                font-weight: $fw-500;
+              }
+              span {
+                font-size: $fs-100;
+                font-weight: $fw-500;
+                color: $clr-neutral-200;
+              }
+              .btn {
+                width: 100%;
+                text-transform: none;
+                background-color: $clr-primary-200;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 70em) {
+  .search-hotels {
+    .search-result {
+      .search-contant {
+        .search-result-wrapper {
+          width: 100%;
+          .desc {
+            flex-direction: column;
+            .price-desc {
+              .rating {
+                gap: 1em;
+                justify-content: flex-end;
+                flex-direction: row-reverse;
+              }
+              .price {
+                text-align: start;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 50em) {
+  .search-hotels {
+    .search-result {
+      .search-contant {
+        .search-result-wrapper {
+          grid-template-columns: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 35em) {
+  .search-hotels {
+    flex-direction: column;
+    .search-sidebar {
+      position: static;
+    }
+  }
+}

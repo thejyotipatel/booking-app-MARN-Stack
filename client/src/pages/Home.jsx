@@ -18,9 +18,6 @@ const Home = () => {
         <h1 className='home-heading'>Home guests love</h1>
         <FeaturedProperties />
       </section>
-      <div className='main-header'>
-        <Mail />
-      </div>
     </>
   )
 }
