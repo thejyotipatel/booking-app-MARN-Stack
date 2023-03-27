@@ -28,10 +28,11 @@
         outline: none;
         border: none;
         width: 100%;
+        color: $clr-primary-300;
       }
       .date-btn {
         background-color: $clr-accent-100;
-        color: $clr-neutral-100;
+        color: $clr-primary-300;
         width: 100%;
         margin: 0 0 0.5em 0;
       }
@@ -48,6 +49,8 @@
           }
           input {
             width: calc(min(100%, 60px));
+            color: $clr-primary-300;
+            text-align: center;
           }
         }
       }

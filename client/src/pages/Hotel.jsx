@@ -1,66 +1,47 @@
+import { AiFillCloseCircle } from 'react-icons/ai'
 import {
   FaArrowAltCircleLeft,
   FaArrowAltCircleRight,
-  FaCross,
   FaMapMarkerAlt,
 } from 'react-icons/fa'
-import { AiFillCloseCircle } from 'react-icons/ai'
-import orange1 from '../assets/image-gallery-cone.jpg'
-import orange2 from '../assets/image-gallery-milkbottles.jpg'
-import orange3 from '../assets/image-gallery-orange.jpg'
-import orange4 from '../assets/image-gallery-sugar-cubes.jpg'
-import orange5 from '../assets/image-stand-out.jpg'
-import oranges from '../assets/orange.jpg'
-import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { openSlider } from '../feature/sliderSlice'
+import {
+  handleSlider,
+  handleSliderIndex,
+  openSlider,
+} from '../feature/sliderSlice'
 
 const Hotel = () => {
-  const photos = [
-    {
-      src: oranges,
-    },
-    {
-      src: orange1,
-    },
-    {
-      src: orange2,
-    },
-    {
-      src: orange3,
-    },
-    {
-      src: orange4,
-    },
-    {
-      src: orange5,
-    },
-  ]
   const dispatch = useDispatch()
-  const { showSlider } = useSelector((state) => state.slider)
-  // const [sliderNumber, setSliderNumber] = useState(0)
-  // const [showSlider, setShowSlider] = useState(false)
-  // const handleSlider = (i) => {
-  //   console.log(i, sliderNumber)
-  //   // setShowSlider(true)
-  //   setSliderNumber(i)
-  // }
+  const { showSlider, photos, sliderIndex } = useSelector(
+    (state) => state.slider
+  )
+
   return (
     <div className='hotel container'>
       {showSlider && (
         <div className='hotel-slider'>
           <div className='slider-wrapper'>
-            <button className='btn  '>
+            <button
+              className='btn'
+              onClick={() => dispatch(handleSliderIndex({ type: 'dec' }))}
+            >
               <FaArrowAltCircleLeft />
             </button>
             <div className='slider-img'>
-              {/* <img src={photos[sliderNumber].src} alt='orange' /> */}
+              <img src={photos[sliderIndex].src} alt='orange' />
             </div>
-            <button className='btn close-btn'>
+            <button
+              className='btn close-btn'
+              onClick={() => dispatch(openSlider())}
+            >
               <AiFillCloseCircle />
             </button>
 
-            <button className='btn'>
+            <button
+              className='btn'
+              onClick={() => dispatch(handleSliderIndex({ type: 'inc' }))}
+            >
               <FaArrowAltCircleRight />
             </button>
           </div>
@@ -80,13 +61,13 @@ const Hotel = () => {
           Studio Apartment with Air conditioning and get free airport taxi
         </p>
         <div className='hotel-imgs'>
-          {photos.map((item, i) => {
+          {photos.map((item, index) => {
             return (
-              <div key={i} className='imgs'>
+              <div key={index} className='imgs'>
                 <img
                   src={item.src}
                   alt={item.src}
-                  // onClick={() => handleSlider(i)}
+                  onClick={() => dispatch(handleSlider({ index }))}
                 />
               </div>
             )

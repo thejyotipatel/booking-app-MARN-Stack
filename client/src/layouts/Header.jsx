@@ -87,7 +87,9 @@ export default function Header() {
                   onClick={() => dispatch(openDateOption())}
                 >
                   <FaCalendarDay />
-                  <span>date to date</span>
+                  <span>
+                    {dates.startDate} to {dates.endDate}
+                  </span>
                 </button>
                 {openDateOptions && (
                   <DateRange

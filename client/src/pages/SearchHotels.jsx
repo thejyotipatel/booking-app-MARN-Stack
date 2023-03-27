@@ -1,43 +1,148 @@
 import orange from '../assets/orange.jpg'
 
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  openOptions,
+  openDateOption,
+  optionHandler,
+} from '../feature/headerSlice'
+import { DateRange } from 'react-date-range'
+import { useState } from 'react'
+import 'react-date-range/dist/styles.css'
+import 'react-date-range/dist/theme/default.css'
 const SearchHotels = () => {
+  const dispatch = useDispatch()
+  const {
+    destination,
+    date,
+    adult,
+    children,
+    room,
+    maxPrice,
+    minPrice,
+    openRoomOptions,
+    showSearchContant,
+    openDateOptions,
+    inputHandler,
+    searchHandler,
+  } = useSelector((state) => state.header)
+  const [dates, setDates] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection',
+    },
+  ])
   return (
     <div className='search-hotels container'>
       <div className='search-sidebar'>
         <div className='search-sidebar-wrapper'>
           <h2>Search</h2>
           <p>Destination</p>
-          <input type='text' />
+          <input
+            type='text'
+            name='destination'
+            defaultValue={destination}
+            onChange={(e) =>
+              dispatch(
+                inputHandler({ name: 'destination', value: e.target.value })
+              )
+            }
+          />
           <p>Check-in date</p>
-          <button className='btn date-btn'>date to date</button>
+          <button
+            className='btn date-btn'
+            onClick={() => dispatch(openDateOption())}
+          >
+            {dates.startDate} to {dates.endDate}
+          </button>
+          {openDateOptions && (
+            <DateRange
+              className='date-selection'
+              editableDateInputs={true}
+              onChange={(item) => setDates([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={dates}
+            />
+          )}
           <p>Options</p>
           <ul role='list'>
             <li>
               <span>
-                Min price <small>(per night)</small>
+                MinPrice price <small>(per night)</small>
               </span>
-              <input type='text' />
+              <input
+                type='text'
+                name='minPrice'
+                defaultValue={minPrice}
+                onChange={(e) =>
+                  dispatch(
+                    inputHandler({ name: 'minPrice', value: e.target.value })
+                  )
+                }
+              />
             </li>
             <li>
               <span>
-                Max price <small>(per night)</small>
+                MaxPrice price <small>(per night)</small>
               </span>
-              <input type='text' />
+              <input
+                type='text'
+                name='maxPrice'
+                defaultValue={maxPrice}
+                onChange={(e) =>
+                  dispatch(
+                    inputHandler({ name: 'maxPrice', value: e.target.value })
+                  )
+                }
+              />
             </li>
             <li>
               <span>Adult</span>
-              <input type='text' />
+              <input
+                type='number'
+                name='adult'
+                min={1}
+                defaultValue={adult}
+                onChange={(e) =>
+                  dispatch(
+                    inputHandler({ name: 'adult', value: e.target.value })
+                  )
+                }
+              />
             </li>
             <li>
               <span>Children</span>
-              <input type='text' />
+              <input
+                type='number'
+                name='children'
+                min={0}
+                defaultValue={children}
+                onChange={(e) =>
+                  dispatch(
+                    inputHandler({ name: 'children', value: e.target.value })
+                  )
+                }
+              />
             </li>
             <li>
               <span>Room</span>
-              <input type='text' />
+              <input
+                type='number'
+                name='room'
+                min={1}
+                defaultValue={room}
+                onChange={(e) =>
+                  dispatch(
+                    inputHandler({ name: 'room', value: e.target.value })
+                  )
+                }
+              />
             </li>
           </ul>
-          <button className='btn  '>Search</button>
+          <button className='btn' onClick={() => dispatch(searchHandler())}>
+            Search
+          </button>
         </div>
       </div>
       <div className='search-result'>
